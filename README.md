@@ -1,15 +1,8 @@
-# Profile animation demo
-
-This README shows an animated typing effect implemented as an SVG.
-
-The animation types three English phrases in loop:
-
-- "Hello"
-- "Welcome to my profile"
-- "My name is Ewan Judio"
-
-Below the SVG is embedded from `assets/typing.svg`:
+# Ewan Judio
 
 ![Typing animation](./assets/typing.svg)
 
-If you push this repository as a GitHub profile repository (repository name must match your GitHub username), the animation will appear on your profile page.
+## À propos de moi
+- 👨‍💻 Développeur web
+- 🌱 Actuellement étudiant à ITU
+- 💼 Portfolio: [https://ewan-judio-portfolio.vercel.app/](https://ewan-judio-portfolio.vercel.app/)
