@@ -67,27 +67,11 @@
       <animate attributeName="opacity" from="0" to="1" dur="0.01s" begin="phase3End.end+1.2s" fill="freeze" />
       <!-- Hello letters with individual animation -->
       <text class="text" x="70" y="54">
-        <tspan class="char" id="h">H</tspan>
-        <animate id="h_opacity" xlink:href="#h" attributeName="opacity" from="0" to="1" dur="0.1s" begin="0s; phase3End.end+1.5s" fill="freeze" />
-        
-        <tspan class="char" id="e">e</tspan>
-        <animate id="e_opacity" xlink:href="#e" attributeName="opacity" from="0" to="1" dur="0.1s" begin="h_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="l1">l</tspan>
-        <animate id="l1_opacity" xlink:href="#l1" attributeName="opacity" from="0" to="1" dur="0.1s" begin="e_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="l2">l</tspan>
-        <animate id="l2_opacity" xlink:href="#l2" attributeName="opacity" from="0" to="1" dur="0.1s" begin="l1_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="o">o</tspan>
-        <animate id="o_opacity" xlink:href="#o" attributeName="opacity" from="0" to="1" dur="0.1s" begin="l2_opacity.end" fill="freeze" />
-        
-        <!-- Add sparkle/emoji after hello -->
-        <tspan id="sparkle1" class="char" dx="5">✨</tspan>
-        <animate id="sparkle1_opacity" xlink:href="#sparkle1" attributeName="opacity" from="0" to="1" dur="0.2s" begin="o_opacity.end" fill="freeze" />
-        
-        <!-- Hide all hello letters after display -->
-        <animate id="phase1End" xlink:href="#hello" attributeName="opacity" from="1" to="0" dur="0.3s" begin="sparkle1_opacity.end+1s" fill="freeze" />
+  <tspan class="char" id="hello1">Hello</tspan>
+  <animate id="hello1_opacity" xlink:href="#hello1" attributeName="opacity" from="0" to="1" dur="0.2s" begin="0s; phase3End.end+1.5s" fill="freeze" />
+  <tspan id="sparkle1" class="char" dx="5">✨</tspan>
+  <animate id="sparkle1_opacity" xlink:href="#sparkle1" attributeName="opacity" from="0" to="1" dur="0.2s" begin="hello1_opacity.end" fill="freeze" />
+  <animate id="phase1End" xlink:href="#hello" attributeName="opacity" from="1" to="0" dur="0.3s" begin="sparkle1_opacity.end+1s" fill="freeze" />
       </text>
     </g>
     
@@ -97,70 +81,19 @@
       <animate attributeName="opacity" from="0" to="1" dur="0.01s" begin="phase1End.end" fill="freeze" />
       
       <text class="text" x="70" y="54">
-        <!-- Welcome to -->
-        <tspan class="char" id="w">W</tspan>
-        <animate id="w_opacity" xlink:href="#w" attributeName="opacity" from="0" to="1" dur="0.1s" begin="phase1End.end+0.1s" fill="freeze" />
-        
-        <tspan class="char" id="e2">e</tspan>
-        <animate id="e2_opacity" xlink:href="#e2" attributeName="opacity" from="0" to="1" dur="0.1s" begin="w_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="l3">l</tspan>
-        <animate id="l3_opacity" xlink:href="#l3" attributeName="opacity" from="0" to="1" dur="0.1s" begin="e2_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="c">c</tspan>
-        <animate id="c_opacity" xlink:href="#c" attributeName="opacity" from="0" to="1" dur="0.1s" begin="l3_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="o2">o</tspan>
-        <animate id="o2_opacity" xlink:href="#o2" attributeName="opacity" from="0" to="1" dur="0.1s" begin="c_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="m">m</tspan>
-        <animate id="m_opacity" xlink:href="#m" attributeName="opacity" from="0" to="1" dur="0.1s" begin="o2_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="e3">e</tspan>
-        <animate id="e3_opacity" xlink:href="#e3" attributeName="opacity" from="0" to="1" dur="0.1s" begin="m_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="space1"> </tspan>
-        <animate id="space1_opacity" xlink:href="#space1" attributeName="opacity" from="0" to="1" dur="0.1s" begin="e3_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="t">t</tspan>
-        <animate id="t_opacity" xlink:href="#t" attributeName="opacity" from="0" to="1" dur="0.1s" begin="space1_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="o3">o</tspan>
-        <animate id="o3_opacity" xlink:href="#o3" attributeName="opacity" from="0" to="1" dur="0.1s" begin="t_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="space2"> </tspan>
-        <animate id="space2_opacity" xlink:href="#space2" attributeName="opacity" from="0" to="1" dur="0.1s" begin="o3_opacity.end" fill="freeze" />
         
         <!-- my profile with accent color -->
-        <tspan class="char text-accent" id="m2">m</tspan>
-        <animate id="m2_opacity" xlink:href="#m2" attributeName="opacity" from="0" to="1" dur="0.1s" begin="space2_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-accent" id="y">y</tspan>
-        <animate id="y_opacity" xlink:href="#y" attributeName="opacity" from="0" to="1" dur="0.1s" begin="m2_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="space3"> </tspan>
-        <animate id="space3_opacity" xlink:href="#space3" attributeName="opacity" from="0" to="1" dur="0.1s" begin="y_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-accent" id="p">p</tspan>
-        <animate id="p_opacity" xlink:href="#p" attributeName="opacity" from="0" to="1" dur="0.1s" begin="space3_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-accent" id="r">r</tspan>
-        <animate id="r_opacity" xlink:href="#r" attributeName="opacity" from="0" to="1" dur="0.1s" begin="p_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-accent" id="o4">o</tspan>
-        <animate id="o4_opacity" xlink:href="#o4" attributeName="opacity" from="0" to="1" dur="0.1s" begin="r_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-accent" id="f">f</tspan>
-        <animate id="f_opacity" xlink:href="#f" attributeName="opacity" from="0" to="1" dur="0.1s" begin="o4_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-accent" id="i">i</tspan>
-        <animate id="i_opacity" xlink:href="#i" attributeName="opacity" from="0" to="1" dur="0.1s" begin="f_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-accent" id="l4">l</tspan>
-        <animate id="l4_opacity" xlink:href="#l4" attributeName="opacity" from="0" to="1" dur="0.1s" begin="i_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-accent" id="e4">e</tspan>
-        <animate id="e4_opacity" xlink:href="#e4" attributeName="opacity" from="0" to="1" dur="0.1s" begin="l4_opacity.end" fill="freeze" />
+        <tspan class="char" id="welcome1">Welcome</tspan>
+        <animate id="welcome1_opacity" xlink:href="#welcome1" attributeName="opacity" from="0" to="1" dur="0.2s" begin="phase1End.end+0.1s" fill="freeze" />
+        <tspan class="char" id="to1"> to</tspan>
+        <animate id="to1_opacity" xlink:href="#to1" attributeName="opacity" from="0" to="1" dur="0.2s" begin="welcome1_opacity.end" fill="freeze" />
+        <tspan class="char text-accent" id="my1"> my</tspan>
+        <animate id="my1_opacity" xlink:href="#my1" attributeName="opacity" from="0" to="1" dur="0.2s" begin="to1_opacity.end" fill="freeze" />
+        <tspan class="char text-accent" id="profile1"> profile</tspan>
+        <animate id="profile1_opacity" xlink:href="#profile1" attributeName="opacity" from="0" to="1" dur="0.2s" begin="my1_opacity.end" fill="freeze" />
+        <tspan id="sparkle2" class="char" dx="5">🚀</tspan>
+        <animate id="sparkle2_opacity" xlink:href="#sparkle2" attributeName="opacity" from="0" to="1" dur="0.2s" begin="profile1_opacity.end" fill="freeze" />
+        <animate id="phase2End" xlink:href="#welcome" attributeName="opacity" from="1" to="0" dur="0.3s" begin="sparkle2_opacity.end+1s" fill="freeze" />
         
         <!-- Add emoji after profile -->
         <tspan id="sparkle2" class="char" dx="5">🚀</tspan>
@@ -177,69 +110,17 @@
       <animate attributeName="opacity" from="0" to="1" dur="0.01s" begin="phase2End.end" fill="freeze" />
       
       <text class="text" x="70" y="54">
-        <tspan class="char" id="m3">M</tspan>
-        <animate id="m3_opacity" xlink:href="#m3" attributeName="opacity" from="0" to="1" dur="0.1s" begin="phase2End.end+0.1s" fill="freeze" />
-        
-        <tspan class="char" id="y2">y</tspan>
-        <animate id="y2_opacity" xlink:href="#y2" attributeName="opacity" from="0" to="1" dur="0.1s" begin="m3_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="space4"> </tspan>
-        <animate id="space4_opacity" xlink:href="#space4" attributeName="opacity" from="0" to="1" dur="0.1s" begin="y2_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="n">n</tspan>
-        <animate id="n_opacity" xlink:href="#n" attributeName="opacity" from="0" to="1" dur="0.1s" begin="space4_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="a">a</tspan>
-        <animate id="a_opacity" xlink:href="#a" attributeName="opacity" from="0" to="1" dur="0.1s" begin="n_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="m4">m</tspan>
-        <animate id="m4_opacity" xlink:href="#m4" attributeName="opacity" from="0" to="1" dur="0.1s" begin="a_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="e5">e</tspan>
-        <animate id="e5_opacity" xlink:href="#e5" attributeName="opacity" from="0" to="1" dur="0.1s" begin="m4_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="space5"> </tspan>
-        <animate id="space5_opacity" xlink:href="#space5" attributeName="opacity" from="0" to="1" dur="0.1s" begin="e5_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="i2">i</tspan>
-        <animate id="i2_opacity" xlink:href="#i2" attributeName="opacity" from="0" to="1" dur="0.1s" begin="space5_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="s">s</tspan>
-        <animate id="s_opacity" xlink:href="#s" attributeName="opacity" from="0" to="1" dur="0.1s" begin="i2_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="space6"> </tspan>
-        <animate id="space6_opacity" xlink:href="#space6" attributeName="opacity" from="0" to="1" dur="0.1s" begin="s_opacity.end" fill="freeze" />
-        
-        <!-- Ewan Judio with name accent color -->
-        <tspan class="char text-name" id="ew">E</tspan>
-        <animate id="ew_opacity" xlink:href="#ew" attributeName="opacity" from="0" to="1" dur="0.1s" begin="space6_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-name" id="wa">w</tspan>
-        <animate id="wa_opacity" xlink:href="#wa" attributeName="opacity" from="0" to="1" dur="0.1s" begin="ew_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-name" id="an">a</tspan>
-        <animate id="an_opacity" xlink:href="#an" attributeName="opacity" from="0" to="1" dur="0.1s" begin="wa_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-name" id="n2">n</tspan>
-        <animate id="n2_opacity" xlink:href="#n2" attributeName="opacity" from="0" to="1" dur="0.1s" begin="an_opacity.end" fill="freeze" />
-        
-        <tspan class="char" id="space7"> </tspan>
-        <animate id="space7_opacity" xlink:href="#space7" attributeName="opacity" from="0" to="1" dur="0.1s" begin="n2_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-name" id="j">J</tspan>
-        <animate id="j_opacity" xlink:href="#j" attributeName="opacity" from="0" to="1" dur="0.1s" begin="space7_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-name" id="u">u</tspan>
-        <animate id="u_opacity" xlink:href="#u" attributeName="opacity" from="0" to="1" dur="0.1s" begin="j_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-name" id="d">d</tspan>
-        <animate id="d_opacity" xlink:href="#d" attributeName="opacity" from="0" to="1" dur="0.1s" begin="u_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-name" id="i3">i</tspan>
-        <animate id="i3_opacity" xlink:href="#i3" attributeName="opacity" from="0" to="1" dur="0.1s" begin="d_opacity.end" fill="freeze" />
-        
-        <tspan class="char text-name" id="o5">o</tspan>
-        <animate id="o5_opacity" xlink:href="#o5" attributeName="opacity" from="0" to="1" dur="0.1s" begin="i3_opacity.end" fill="freeze" />
+        <tspan class="char" id="myname1">My</tspan>
+        <animate id="myname1_opacity" xlink:href="#myname1" attributeName="opacity" from="0" to="1" dur="0.2s" begin="phase2End.end+0.1s" fill="freeze" />
+        <tspan class="char" id="nameis1"> name is</tspan>
+        <animate id="nameis1_opacity" xlink:href="#nameis1" attributeName="opacity" from="0" to="1" dur="0.2s" begin="myname1_opacity.end" fill="freeze" />
+        <tspan class="char text-name" id="ewan1"> Ewan</tspan>
+        <animate id="ewan1_opacity" xlink:href="#ewan1" attributeName="opacity" from="0" to="1" dur="0.2s" begin="nameis1_opacity.end" fill="freeze" />
+        <tspan class="char text-name" id="judio1"> Judio</tspan>
+        <animate id="judio1_opacity" xlink:href="#judio1" attributeName="opacity" from="0" to="1" dur="0.2s" begin="ewan1_opacity.end" fill="freeze" />
+        <tspan id="sparkle3" class="char" dx="5">👋</tspan>
+        <animate id="sparkle3_opacity" xlink:href="#sparkle3" attributeName="opacity" from="0" to="1" dur="0.2s" begin="judio1_opacity.end" fill="freeze" />
+        <animate id="phase3End" xlink:href="#name" attributeName="opacity" from="1" to="0" dur="0.3s" begin="sparkle3_opacity.end+1s" fill="freeze" />
         
         <!-- Add emoji after name -->
         <tspan id="sparkle3" class="char" dx="5">👋</tspan>
