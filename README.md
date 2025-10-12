@@ -1,12 +1,15 @@
-- 👋 Hi, I’m @Ewan Judio
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+# Profile animation demo
 
-<!---
-ewan2005/ewan2005 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+This README shows an animated typing effect implemented as an SVG.
+
+The animation types three English phrases in loop:
+
+- "Hello"
+- "Welcome to my profile"
+- "My name is Ewan Judio"
+
+Below the SVG is embedded from `assets/typing.svg`:
+
+![Typing animation](./assets/typing.svg)
+
+If you push this repository as a GitHub profile repository (repository name must match your GitHub username), the animation will appear on your profile page.
