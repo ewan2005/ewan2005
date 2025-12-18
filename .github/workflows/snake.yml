@@ -18,26 +18,31 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Install system dependencies for canvas
         run: |
           sudo apt-get update
-          sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev build-essential g++ pkg-config libpng-dev libssl-dev pkg-config make python3 python3-dev
-          # Ensure npm/node-gyp uses python3
-          sudo ln -sf /usr/bin/python3 /usr/bin/python || true
-          npm config set python /usr/bin/python3 || true
-        # This installs the native libraries and python required by the `canvas` Node package.
+          sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
 
-      - name: Generate github-contribution-grid-snake.svg
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-            dist/github-snake.gif?color_snake=6366f1&color_dots=#0d1117,#1e1e2e,#4338ca,#6366f1,#818cf8
+      - name: Install snk package
+        run: npm install @platane/snk
+
+      - name: Generate snake SVG
+        run: |
+          npx @platane/snk github-user-contribution \
+            --user ewan2005 \
+            --outputs dist/github-snake.svg \
+            --outputs "dist/github-snake-dark.svg?palette=github-dark"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
