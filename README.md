@@ -1,11 +1,9 @@
 <!-- Animated Header with Wave -->
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Ewan%20Judio&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=32"/>
 
-<!-- Animated Typing SVG -->
+<!-- Custom Animated Typing SVG -->
 <p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=100&lines=%F0%9F%91%8B+Hey%2C+I'm+Ewan+!;%F0%9F%92%BB+Passionate+Developer;%F0%9F%8E%93+Student+at+ITU" alt="Typing SVG" />
-  </a>
+  <img src="./assets/typing.svg" alt="Typing Animation" width="800"/>
 </p>
 
 <!-- Animated Profile Badges -->
@@ -116,8 +114,17 @@ const ewan = {
   Contribution Snake
 </h2>
 
+<!-- Custom Contribution Stats SVG -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg" alt="Snake animation" />
+  <img src="./assets/contributions.svg" alt="306 Contributions" width="800"/>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ewan2005/ewan2005/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ewan2005/ewan2005/output/github-snake.svg" />
+    <img alt="github-snake" src="https://raw.githubusercontent.com/ewan2005/ewan2005/output/github-snake-dark.svg" />
+  </picture>
 </p>
 
 <!-- Animated Separator Line -->

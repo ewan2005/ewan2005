@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="250" viewBox="0 0 800 250" role="img" aria-label="Ewan Judio - Developer Profile">
+  
+  <defs>
+    <!-- Animated Gradient Background -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0c29">
+        <animate attributeName="stop-color" values="#0f0c29;#302b63;#24243e;#0f0c29" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#302b63">
+        <animate attributeName="stop-color" values="#302b63;#24243e;#0f0c29;#302b63" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#24243e">
+        <animate attributeName="stop-color" values="#24243e;#0f0c29;#302b63;#24243e" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <!-- Neon Glow Gradient for Text -->
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1">
+        <animate attributeName="stop-color" values="#6366f1;#8b5cf6;#ec4899;#6366f1" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#8b5cf6">
+        <animate attributeName="stop-color" values="#8b5cf6;#ec4899;#6366f1;#8b5cf6" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#ec4899">
+        <animate attributeName="stop-color" values="#ec4899;#6366f1;#8b5cf6;#ec4899" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <!-- Accent Gradient -->
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+    
+    <!-- Card Gradient -->
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(99,102,241,0.15)"/>
+      <stop offset="100%" style="stop-color:rgba(139,92,246,0.05)"/>
+    </linearGradient>
+    
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Strong Glow Filter -->
+    <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Particle Glow -->
+    <filter id="particleGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <style>
+    .main-text {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 32px;
+      font-weight: 700;
+      fill: url(#textGradient);
+      filter: url(#glow);
+    }
+    
+    .sub-text {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 18px;
+      font-weight: 500;
+      fill: #a5b4fc;
+    }
+    
+    .accent-text {
+      fill: url(#accentGradient);
+      filter: url(#glow);
+    }
+    
+    .name-text {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 42px;
+      font-weight: 700;
+      fill: url(#textGradient);
+      filter: url(#strongGlow);
+    }
+    
+    .emoji {
+      font-size: 28px;
+    }
+    
+    .cursor {
+      fill: #6366f1;
+      filter: url(#glow);
+    }
+    
+    .particle {
+      fill: #8b5cf6;
+      filter: url(#particleGlow);
+    }
+    
+    .char { opacity: 0; }
+  </style>
+  
+  <!-- Background -->
+  <rect fill="url(#bgGradient)" width="100%" height="100%" rx="16"/>
+  
+  <!-- Animated Border -->
+  <rect x="2" y="2" width="796" height="246" rx="14" fill="none" stroke="url(#textGradient)" stroke-width="2" opacity="0.5">
+    <animate attributeName="stroke-dasharray" values="0,2000;2000,0" dur="3s" fill="freeze"/>
+  </rect>
+  
+  <!-- Floating Particles -->
+  <g class="particles">
+    <circle class="particle" cx="50" cy="50" r="2">
+      <animate attributeName="cy" values="50;200;50" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="particle" cx="150" cy="180" r="1.5">
+      <animate attributeName="cy" values="180;30;180" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="particle" cx="650" cy="80" r="2">
+      <animate attributeName="cy" values="80;220;80" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="particle" cx="750" cy="150" r="1.5">
+      <animate attributeName="cy" values="150;20;150" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="particle" cx="400" cy="30" r="2.5">
+      <animate attributeName="cy" values="30;220;30" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="particle" cx="550" cy="200" r="1.5">
+      <animate attributeName="cy" values="200;40;200" dur="5.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="5.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="particle" cx="250" cy="100" r="2">
+      <animate attributeName="cy" values="100;230;100" dur="6.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Glassmorphism Card -->
+  <rect x="40" y="35" width="720" height="180" rx="20" fill="url(#cardGradient)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  
+  <!-- Code Bracket Decoration -->
+  <text x="60" y="135" font-family="JetBrains Mono, Consolas, monospace" font-size="80" fill="rgba(99,102,241,0.15)" font-weight="bold">{</text>
+  <text x="700" y="135" font-family="JetBrains Mono, Consolas, monospace" font-size="80" fill="rgba(99,102,241,0.15)" font-weight="bold">}</text>
+  
+  <!-- Main Content Group -->
+  <g transform="translate(100, 90)">
+    
+    <!-- PHASE 1: Hey there! -->
+    <g id="phase1">
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0s;phase4End.end" fill="freeze"/>
+      <text class="main-text" x="0" y="30">
+        <tspan class="char" id="hey">Hey there!</tspan>
+        <animate id="hey_show" xlink:href="#hey" attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.5s;phase4End.end+0.5s" fill="freeze"/>
+        <tspan class="emoji char" id="wave" dx="15">👋</tspan>
+        <animate id="wave_show" xlink:href="#wave" attributeName="opacity" from="0" to="1" dur="0.2s" begin="hey_show.end+0.2s" fill="freeze"/>
+      </text>
+      <text class="sub-text" x="0" y="70" opacity="0" id="sub1">Welcome to my GitHub</text>
+      <animate xlink:href="#sub1" attributeName="opacity" from="0" to="1" dur="0.4s" begin="wave_show.end+0.3s" fill="freeze"/>
+      <animate id="phase1End" attributeName="opacity" from="1" to="0" dur="0.4s" begin="wave_show.end+2.5s" fill="freeze"/>
+    </g>
+    
+    <!-- PHASE 2: I'm Ewan Judio -->
+    <g id="phase2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="phase1End.end" fill="freeze"/>
+      <text class="name-text" x="0" y="45">
+        <tspan class="char" id="im">I'm </tspan>
+        <animate id="im_show" xlink:href="#im" attributeName="opacity" from="0" to="1" dur="0.2s" begin="phase1End.end+0.3s" fill="freeze"/>
+        <tspan class="char" id="ewan">Ewan Judio</tspan>
+        <animate id="ewan_show" xlink:href="#ewan" attributeName="opacity" from="0" to="1" dur="0.4s" begin="im_show.end" fill="freeze"/>
+        <tspan class="emoji char" id="sparkle" dx="15">✨</tspan>
+        <animate id="sparkle_show" xlink:href="#sparkle" attributeName="opacity" from="0" to="1" dur="0.2s" begin="ewan_show.end+0.2s" fill="freeze"/>
+      </text>
+      <text class="sub-text" x="0" y="85" opacity="0" id="sub2">Full-Stack Developer</text>
+      <animate xlink:href="#sub2" attributeName="opacity" from="0" to="1" dur="0.4s" begin="sparkle_show.end+0.2s" fill="freeze"/>
+      <animate id="phase2End" attributeName="opacity" from="1" to="0" dur="0.4s" begin="sparkle_show.end+2.5s" fill="freeze"/>
+    </g>
+    
+    <!-- PHASE 3: Passionate about code -->
+    <g id="phase3" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="phase2End.end" fill="freeze"/>
+      <text class="main-text" x="0" y="30">
+        <tspan class="char" id="passionate">Passionate about</tspan>
+        <animate id="passionate_show" xlink:href="#passionate" attributeName="opacity" from="0" to="1" dur="0.3s" begin="phase2End.end+0.3s" fill="freeze"/>
+        <tspan class="char accent-text" id="code" dx="10">code</tspan>
+        <animate id="code_show" xlink:href="#code" attributeName="opacity" from="0" to="1" dur="0.3s" begin="passionate_show.end+0.1s" fill="freeze"/>
+        <tspan class="emoji char" id="rocket" dx="15">🚀</tspan>
+        <animate id="rocket_show" xlink:href="#rocket" attributeName="opacity" from="0" to="1" dur="0.2s" begin="code_show.end+0.2s" fill="freeze"/>
+      </text>
+      <text class="sub-text" x="0" y="70" opacity="0" id="sub3">Building amazing things every day</text>
+      <animate xlink:href="#sub3" attributeName="opacity" from="0" to="1" dur="0.4s" begin="rocket_show.end+0.2s" fill="freeze"/>
+      <animate id="phase3End" attributeName="opacity" from="1" to="0" dur="0.4s" begin="rocket_show.end+2.5s" fill="freeze"/>
+    </g>
+    
+    <!-- PHASE 4: Let's connect -->
+    <g id="phase4" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="phase3End.end" fill="freeze"/>
+      <text class="main-text" x="0" y="30">
+        <tspan class="char" id="lets">Let's </tspan>
+        <animate id="lets_show" xlink:href="#lets" attributeName="opacity" from="0" to="1" dur="0.2s" begin="phase3End.end+0.3s" fill="freeze"/>
+        <tspan class="char accent-text" id="connect">connect</tspan>
+        <animate id="connect_show" xlink:href="#connect" attributeName="opacity" from="0" to="1" dur="0.3s" begin="lets_show.end" fill="freeze"/>
+        <tspan class="emoji char" id="handshake" dx="15">🤝</tspan>
+        <animate id="handshake_show" xlink:href="#handshake" attributeName="opacity" from="0" to="1" dur="0.2s" begin="connect_show.end+0.2s" fill="freeze"/>
+      </text>
+      <text class="sub-text" x="0" y="70" opacity="0" id="sub4">Check out my projects below ⬇️</text>
+      <animate xlink:href="#sub4" attributeName="opacity" from="0" to="1" dur="0.4s" begin="handshake_show.end+0.2s" fill="freeze"/>
+      <animate id="phase4End" attributeName="opacity" from="1" to="0" dur="0.4s" begin="handshake_show.end+2.5s" fill="freeze"/>
+    </g>
+    
+    <!-- Blinking Cursor -->
+    <rect class="cursor" x="0" y="10" width="3" height="30" rx="1">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="x" 
+               values="0;180;180;300;300;350;350;220;220;0" 
+               dur="16s" 
+               repeatCount="indefinite"/>
+    </rect>
+    
+  </g>
+  
+  <!-- Bottom Decorative Line -->
+  <line x1="100" y1="230" x2="700" y2="230" stroke="url(#textGradient)" stroke-width="2" stroke-linecap="round" opacity="0.3">
+    <animate attributeName="x2" values="100;700;100" dur="4s" repeatCount="indefinite"/>
+  </line>
+  
+  <!-- Status Indicator -->
+  <g transform="translate(680, 55)">
+    <circle cx="0" cy="0" r="6" fill="#22c55e" filter="url(#glow)">
+      <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="15" y="5" font-family="JetBrains Mono, Consolas, monospace" font-size="12" fill="#22c55e">Online</text>
+  </g>
+  
+</svg>

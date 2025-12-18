@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+  <defs>
+    <!-- Animated Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117">
+        <animate attributeName="stop-color" values="#0d1117;#1a1b26;#0d1117" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#161b22">
+        <animate attributeName="stop-color" values="#161b22;#24283b;#161b22" dur="5s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <!-- Contribution Color Gradient -->
+    <linearGradient id="contribGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4338ca"/>
+      <stop offset="50%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#818cf8"/>
+    </linearGradient>
+    
+    <!-- Glow Effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Number Glow -->
+    <filter id="numGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" rx="16"/>
+  
+  <!-- Border Glow -->
+  <rect x="2" y="2" width="796" height="196" rx="14" fill="none" stroke="url(#contribGrad)" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Snake Decoration -->
+  <g transform="translate(50, 100)">
+    <!-- Snake Body with Animation -->
+    <g filter="url(#glow)">
+      <circle cx="0" cy="0" r="8" fill="#22c55e">
+        <animate attributeName="cx" values="0;15;30;45;60;45;30;15;0" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="20" cy="0" r="7" fill="#4ade80">
+        <animate attributeName="cx" values="20;35;50;65;80;65;50;35;20" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="38" cy="0" r="6" fill="#86efac">
+        <animate attributeName="cx" values="38;53;68;83;98;83;68;53;38" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="54" cy="0" r="5" fill="#bbf7d0">
+        <animate attributeName="cx" values="54;69;84;99;114;99;84;69;54" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Main Number Display -->
+  <g transform="translate(400, 100)">
+    <text text-anchor="middle" y="15" font-family="JetBrains Mono, Consolas, monospace" font-size="72" font-weight="bold" fill="url(#contribGrad)" filter="url(#numGlow)">
+      306
+      <animate attributeName="opacity" values="0;1" dur="1s" fill="freeze"/>
+    </text>
+  </g>
+  
+  <!-- Labels -->
+  <text x="400" y="150" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="18" fill="#a5b4fc">
+    contributions in the last year
+    <animate attributeName="opacity" values="0;1" dur="1s" begin="0.5s" fill="freeze"/>
+  </text>
+  
+  <!-- Fire Emoji Animation -->
+  <text x="280" y="110" font-size="36" opacity="0">
+    🔥
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1s" fill="freeze"/>
+    <animate attributeName="y" values="110;100;110" dur="1s" begin="1s" repeatCount="indefinite"/>
+  </text>
+  
+  <text x="500" y="110" font-size="36" opacity="0">
+    🚀
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.2s" fill="freeze"/>
+    <animate attributeName="y" values="110;100;110" dur="1s" begin="1.2s" repeatCount="indefinite"/>
+  </text>
+  
+  <!-- Contribution Grid Preview -->
+  <g transform="translate(600, 60)">
+    <!-- Mini contribution squares -->
+    <rect x="0" y="0" width="10" height="10" rx="2" fill="#1e1e2e"><animate attributeName="fill" values="#1e1e2e;#4338ca;#1e1e2e" dur="3s" begin="0s" repeatCount="indefinite"/></rect>
+    <rect x="14" y="0" width="10" height="10" rx="2" fill="#4338ca"><animate attributeName="fill" values="#4338ca;#6366f1;#4338ca" dur="3s" begin="0.2s" repeatCount="indefinite"/></rect>
+    <rect x="28" y="0" width="10" height="10" rx="2" fill="#6366f1"><animate attributeName="fill" values="#6366f1;#818cf8;#6366f1" dur="3s" begin="0.4s" repeatCount="indefinite"/></rect>
+    <rect x="42" y="0" width="10" height="10" rx="2" fill="#818cf8"><animate attributeName="fill" values="#818cf8;#6366f1;#818cf8" dur="3s" begin="0.6s" repeatCount="indefinite"/></rect>
+    
+    <rect x="0" y="14" width="10" height="10" rx="2" fill="#6366f1"><animate attributeName="fill" values="#6366f1;#818cf8;#6366f1" dur="3s" begin="0.3s" repeatCount="indefinite"/></rect>
+    <rect x="14" y="14" width="10" height="10" rx="2" fill="#1e1e2e"><animate attributeName="fill" values="#1e1e2e;#4338ca;#1e1e2e" dur="3s" begin="0.5s" repeatCount="indefinite"/></rect>
+    <rect x="28" y="14" width="10" height="10" rx="2" fill="#4338ca"><animate attributeName="fill" values="#4338ca;#6366f1;#4338ca" dur="3s" begin="0.7s" repeatCount="indefinite"/></rect>
+    <rect x="42" y="14" width="10" height="10" rx="2" fill="#6366f1"><animate attributeName="fill" values="#6366f1;#4338ca;#6366f1" dur="3s" begin="0.9s" repeatCount="indefinite"/></rect>
+    
+    <rect x="0" y="28" width="10" height="10" rx="2" fill="#818cf8"><animate attributeName="fill" values="#818cf8;#6366f1;#818cf8" dur="3s" begin="0.1s" repeatCount="indefinite"/></rect>
+    <rect x="14" y="28" width="10" height="10" rx="2" fill="#6366f1"><animate attributeName="fill" values="#6366f1;#4338ca;#6366f1" dur="3s" begin="0.4s" repeatCount="indefinite"/></rect>
+    <rect x="28" y="28" width="10" height="10" rx="2" fill="#1e1e2e"><animate attributeName="fill" values="#1e1e2e;#6366f1;#1e1e2e" dur="3s" begin="0.6s" repeatCount="indefinite"/></rect>
+    <rect x="42" y="28" width="10" height="10" rx="2" fill="#4338ca"><animate attributeName="fill" values="#4338ca;#818cf8;#4338ca" dur="3s" begin="0.8s" repeatCount="indefinite"/></rect>
+    
+    <rect x="0" y="42" width="10" height="10" rx="2" fill="#4338ca"><animate attributeName="fill" values="#4338ca;#6366f1;#4338ca" dur="3s" begin="0.2s" repeatCount="indefinite"/></rect>
+    <rect x="14" y="42" width="10" height="10" rx="2" fill="#818cf8"><animate attributeName="fill" values="#818cf8;#4338ca;#818cf8" dur="3s" begin="0.5s" repeatCount="indefinite"/></rect>
+    <rect x="28" y="42" width="10" height="10" rx="2" fill="#6366f1"><animate attributeName="fill" values="#6366f1;#818cf8;#6366f1" dur="3s" begin="0.7s" repeatCount="indefinite"/></rect>
+    <rect x="42" y="42" width="10" height="10" rx="2" fill="#1e1e2e"><animate attributeName="fill" values="#1e1e2e;#4338ca;#1e1e2e" dur="3s" begin="0.9s" repeatCount="indefinite"/></rect>
+  </g>
+  
+  <!-- Year Badge -->
+  <g transform="translate(700, 170)">
+    <rect x="-40" y="-18" width="80" height="26" rx="13" fill="#1e1e2e" stroke="#6366f1" stroke-width="1"/>
+    <text x="0" y="2" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="12" fill="#a5b4fc">2024-2025</text>
+  </g>
+  
+</svg>
