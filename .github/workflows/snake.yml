@@ -21,28 +21,13 @@ jobs:
     timeout-minutes: 10
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install system dependencies for canvas
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
-
-      - name: Install snk package
-        run: npm install @platane/snk
-
       - name: Generate snake SVG
-        run: |
-          npx @platane/snk github-user-contribution \
-            --user ewan2005 \
-            --outputs dist/github-snake.svg \
-            --outputs "dist/github-snake-dark.svg?palette=github-dark"
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ewan2005
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
