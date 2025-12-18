@@ -24,8 +24,11 @@ jobs:
       - name: Install system dependencies for canvas
         run: |
           sudo apt-get update
-          sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev build-essential g++ pkg-config libpng-dev
-        # This installs the native libraries required by the `canvas` Node package.
+          sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev build-essential g++ pkg-config libpng-dev libssl-dev pkg-config make python3 python3-dev
+          # Ensure npm/node-gyp uses python3
+          sudo ln -sf /usr/bin/python3 /usr/bin/python || true
+          npm config set python /usr/bin/python3 || true
+        # This installs the native libraries and python required by the `canvas` Node package.
 
       - name: Generate github-contribution-grid-snake.svg
         uses: Platane/snk/svg-only@v3
