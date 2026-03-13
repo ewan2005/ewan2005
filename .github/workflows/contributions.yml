@@ -30,6 +30,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.CONTRIB_TOKEN || secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
 
+      - name: Show changes (debug)
+        run: |
+          git status --porcelain
+          git diff -- assets/contributions.svg || true
+
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

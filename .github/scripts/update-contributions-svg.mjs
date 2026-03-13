@@ -12,8 +12,28 @@ const svgPath = path.join(repoRoot, 'assets', 'contributions.svg');
 
 const now = new Date();
 const to = now.toISOString();
-const fromDate = new Date(now);
-fromDate.setUTCDate(fromDate.getUTCDate() - 365);
+
+// Range selection:
+// - "year" (default): Jan 1st of current year -> now (matches GitHub's year view)
+// - "last_year": last 365 days -> now
+const rangeMode = (process.env.CONTRIB_RANGE || 'year').toLowerCase();
+
+let fromDate;
+let rangeLabel;
+let badgeText;
+
+if (rangeMode === 'last_year') {
+  fromDate = new Date(now);
+  fromDate.setUTCDate(fromDate.getUTCDate() - 365);
+  rangeLabel = 'contributions in the last year';
+  badgeText = `${fromDate.getUTCFullYear()}-${now.getUTCFullYear()}`;
+} else {
+  const year = now.getUTCFullYear();
+  fromDate = new Date(Date.UTC(year, 0, 1, 0, 0, 0));
+  rangeLabel = `contributions in ${year}`;
+  badgeText = `${year}`;
+}
+
 const from = fromDate.toISOString();
 
 const login =
@@ -69,8 +89,6 @@ if (typeof total !== 'number') {
   process.exit(1);
 }
 
-const yearRange = `${fromDate.getUTCFullYear()}-${now.getUTCFullYear()}`;
-
 let svg = await fs.readFile(svgPath, 'utf8');
 
 // Update the main number (first <text> that uses filter="url(#numGlow)")
@@ -79,12 +97,20 @@ svg = svg.replace(
   `$1${total}$3`
 );
 
-// Update the year badge text (the badge at the bottom-right)
+// Update the label under the number (preserve the <animate/> inside the text node)
 svg = svg.replace(
-  /(<text[^>]*fill="#a5b4fc">)\d{4}-\d{4}(<\/text>)/m,
-  `$1${yearRange}$2`
+  /(<text\s+[^>]*x="400"\s+y="150"[^>]*>\s*)([^<]*?)(\s*<animate\b)/m,
+  `$1${rangeLabel}$3`
+);
+
+// Update the year badge text (the badge at the bottom-right)
+svg = svg.replace(  
+  /(<g\s+transform="translate\(700,\s*170\)">[\s\S]*?<text[^>]*fill="#a5b4fc">)([^<]*)(<\/text>)/m,
+  `$1${badgeText}$3`
 );
 
 await fs.writeFile(svgPath, svg, 'utf8');
 
-console.log(`Updated ${path.relative(repoRoot, svgPath)} => totalContributions=${total}, range=${yearRange}`);
+console.log(
+  `Updated ${path.relative(repoRoot, svgPath)} => totalContributions=${total}, mode=${rangeMode}`
+);
