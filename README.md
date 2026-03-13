@@ -90,7 +90,7 @@ const ewan = {
 
 <!-- Custom Contribution Stats SVG -->
 <p align="center">
-  <img src="./assets/contributions.svg" alt="306 Contributions" width="800"/>
+  <img src="./assets/contributions.svg" alt="2000 Contributions" width="800"/>
 </p>
 
 <p align="center">
@@ -117,7 +117,7 @@ const ewan = {
   <a href="https://github.com/ewan2005" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
-  <a href="mailto:your-email@example.com" target="_blank">
+  <a href="mailto:ewanjudiotsarazaka@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
 </p>
