@@ -1,0 +1,37 @@
+name: Update Contributions SVG
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # daily
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  update:
+    if: github.actor != 'github-actions[bot]'
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Update contributions.svg
+        run: node .github/scripts/update-contributions-svg.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.CONTRIB_TOKEN || secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update contributions.svg"
+          file_pattern: assets/contributions.svg
