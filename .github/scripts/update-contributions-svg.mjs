@@ -8,7 +8,7 @@ if (!token) {
 }
 
 const repoRoot = process.cwd();
-const svgPath = path.join(repoRoot, 'assets', 'contributions.svg');
+const svgPath = path.join(repoRoot, 'assets', 'contributions-card.svg');
 
 const now = new Date();
 const to = now.toISOString();

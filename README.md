@@ -90,7 +90,7 @@ const ewan = {
 
 <!-- Custom Contribution Stats SVG -->
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/ewan2005/ewan2005@main/assets/contributions.svg" alt="Contributions (last year)" width="800" />
+  <img src="https://cdn.jsdelivr.net/gh/ewan2005/ewan2005@main/assets/contributions-card.svg" alt="Contributions (last year)" width="800" />
 </p>
 
 <p align="center">

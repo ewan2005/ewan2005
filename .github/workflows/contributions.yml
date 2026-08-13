@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Update contributions.svg
+      - name: Update contributions card
         run: node .github/scripts/update-contributions-svg.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.CONTRIB_TOKEN || secrets.GITHUB_TOKEN }}
@@ -33,10 +33,10 @@ jobs:
       - name: Show changes (debug)
         run: |
           git status --porcelain
-          git diff -- assets/contributions.svg || true
+          git diff -- assets/contributions-card.svg || true
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update contributions.svg"
-          file_pattern: assets/contributions.svg
+          commit_message: "chore: update contributions card"
+          file_pattern: assets/contributions-card.svg
